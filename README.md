@@ -4,7 +4,7 @@ Installs and configures [collectd](https://collectd.org), the system statistics
 collection daemon.
 
 This role uses the collectd yum repo available at
-https://pkg.ci.collectd.org/rpm/collectd-5.7/epel-6-x86_64/.
+https://pkg.ci.collectd.org/rpm/collectd-5.7.
 
 By default, this role enables the following read and write plugins:
 
