@@ -8,11 +8,11 @@ https://pkg.ci.collectd.org/rpm/collectd-5.7.
 
 By default, this role enables the following read and write plugins:
 
-    - cpu           (read)
-    - interface     (read)
-    - load          (read)
-    - memory        (read)
-    - rrdtool       (write)
+- cpu           (read)
+- interface     (read)
+- load          (read)
+- memory        (read)
+- rrdtool       (write)
 
 ## Requirements
 
