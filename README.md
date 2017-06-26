@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/giovtorres/ansible-role-collectd.svg?branch=master)](https://travis-ci.org/giovtorres/ansible-role-collectd)
 
 Installs and configures [collectd](https://collectd.org), the system statistics
-collection daemon.
+collection daemon.  Supported on EL 6 and 7.
 
 This role uses the collectd yum repo available at
 https://pkg.ci.collectd.org/rpm/collectd-5.7.
