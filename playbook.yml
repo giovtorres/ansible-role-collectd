@@ -1,0 +1,15 @@
+---
+- hosts: all
+  vars:
+    collectd_plugin_contextswitch: true
+    collectd_plugin_df: true
+    collectd_plugin_df_fstype:
+      - xfs
+    collectd_plugin_disk: true
+    collectd_plugin_processes: true
+    collectd_plugin_processes_process:
+      - collectd
+    collectd_plugin_protocols: true
+
+  roles:
+    - ansible-role-collectd

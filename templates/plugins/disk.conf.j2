@@ -1,0 +1,14 @@
+LoadPlugin disk
+
+<Plugin disk>
+{% for disk in collectd_plugin_disk_disk %}
+  Disk "{{ disk }}"
+{% endfor %}
+  IgnoreSelected {{ collectd_plugin_disk_ignoreselected }}
+{% if collectd_plugin_disk_usebsdname is defined %}
+  UseBSDName {{ collectd_plugin_disk_usebsdname }}
+{% endif %}
+{% if collectd_plugin_disk_udevnameattr is defined %}
+  UdevNameAttr "DEVNAME"
+{% endif %}
+</Plugin>

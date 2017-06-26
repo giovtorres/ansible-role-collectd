@@ -1,0 +1,16 @@
+- name: Install disk plugin dependency.
+  yum:
+    name: collectd-disk
+  when:
+    - collectd_plugin_disk is defined
+    - collectd_plugin_disk
+
+- name: Install rrdtool plugin dependency.
+  yum:
+    name: "{{ item }}"
+  with_items:
+    - collectd-rrdtool
+    - rrdtool-devel
+  when:
+    - collectd_plugin_rrdtool is defined
+    - collectd_plugin_rrdtool

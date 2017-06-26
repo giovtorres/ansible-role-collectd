@@ -1,0 +1,12 @@
+LoadPlugin interface
+
+<Plugin interface>
+{% for interface in collectd_plugin_interface_interface %}
+  Interface "{{ interface }}"
+{% endfor %}
+  IgnoreSelected {{ collectd_plugin_interface_ignoreselected }}
+  ReportInactive {{ collectd_plugin_interface_reportinactive }}
+{% if collectd_plugin_interface_uniquename is defined %}
+  UniqueName false
+{% endif %}
+</Plugin>

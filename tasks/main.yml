@@ -1,0 +1,69 @@
+---
+- name: Configure Collectd Yum repository.
+  yum_repository:
+    name: collectd
+    description: Collectd Yum Repo - $basearch
+    baseurl: "https://pkg.ci.collectd.org/rpm/collectd-{{ collectd_version }}/epel-$releasever-$basearch/"
+    enabled: "{{ collectd_yum_repo_enabled }}"
+    gpgcheck: yes
+    gpgkey: https://pkg.ci.collectd.org/pubkey.asc
+
+- name: Import Collectd RPM GPG Key.
+  rpm_key:
+    state: present
+    key: https://pkg.ci.collectd.org/pubkey.asc
+
+- name: Install Collectd.
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - collectd
+    - collectd-utils
+
+- name: Create Collectd plugin configuration directory.
+  file:
+    path: "{{collectd_conf_include_dir }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Enable and configure plugins.
+  template:
+    src: "{{ item }}"
+    dest: "{{ collectd_conf_include_dir }}/{{ item | basename | regex_replace('\\.j2', '') }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_fileglob: "../templates/plugins/*conf.j2"
+  when: vars['collectd_plugin_' + item | basename | regex_replace('\\.conf\\.j2', '')]
+  notify: restart collectd
+
+- name: Install plugin dependencies.
+  include: install-plugin-deps.yml
+
+- name: Disable plugins.
+  file:
+    path: "{{ collectd_conf_include_dir }}/{{ item | basename | regex_replace('\\.j2', '') }}"
+    state: absent
+  with_fileglob: "../templates/plugins/*conf.j2"
+  when: not vars['collectd_plugin_' + item | basename | regex_replace('\\.conf\\.j2', '')]
+  notify: restart collectd
+
+- name: Copy Collectd global configuration.
+  template:
+    src: collectd.conf.j2
+    dest: "{{ collectd_global_config }}"
+    owner: root
+    group: root
+    mode: 0644
+#  validate: collectd -c -T
+  notify: restart collectd
+
+- name: Enable collectd and start at boot time.
+  service:
+    name: collectd
+    state: started
+    enabled: yes

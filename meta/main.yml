@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Giovanni Torres
+  description: Installs and configures collectd, the system statistics collection daemon.
+  license: license BSD
+  min_ansible_version: 1.6
+  platforms:
+  - name: EL
+    versions:
+    - 6
+    - 7
+  galaxy_tags:
+  - monitoring
+  - system
+  - performance
+  - metrics
+dependencies:
+  - giovtorres.epel

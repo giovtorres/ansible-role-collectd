@@ -1,0 +1,97 @@
+---
+collectd_version: "5.7"
+collectd_yum_repo_enabled: yes
+
+collectd_global_config: /etc/collectd.conf
+
+## Global Configuration
+
+#collectd_conf_hostname: {{ inventory_hostname }}
+#collectd_conf_writequeuelimithigh: 1000000
+#collectd_conf_writequeuelimitlow: 800000
+
+collectd_conf_fqdnlookup: "true"
+collectd_conf_basedir: /var/lib/collectd
+collectd_conf_pidfile: /var/run/collectd.pid
+collectd_conf_plugindir: /usr/lib64/collectd
+collectd_conf_typesdb: /usr/share/collectd/types.db
+
+collectd_conf_autoloadplugin: "false"
+collectd_conf_collectinternalstats: "false"
+collectd_plugin_logging: syslog # logfile, log_logstash
+
+collectd_conf_interval: 10
+collectd_conf_maxreadinterval: 86400
+collectd_conf_timeout: 2
+collectd_conf_readthreads: 5
+collectd_conf_writethreads: 5
+
+collectd_conf_include_dir: /etc/collectd.d
+
+## Plugin Configuration
+
+collectd_plugin_contextswitch: false
+
+collectd_plugin_cpu: true
+collectd_plugin_cpu_reportbycpu: "true"
+collectd_plugin_cpu_reportbystate: "true"
+collectd_plugin_cpu_valuespercentage: "false"
+
+collectd_plugin_df: false
+#collectd_plugin_df_device:
+#  - /dev/sda1
+#collectd_plugin_df_mountpoint:
+#  - 192.168.0.2:/mnt/nfs
+#collectd_plugin_df_fstype:
+#  - ext4
+collectd_plugin_df_ignoreselected: "false"
+collectd_plugin_df_reportbydevice: "false"
+collectd_plugin_df_reportinodes: "false"
+collectd_plugin_df_valuesabsolute: "true"
+collectd_plugin_df_valuespercentage: "false"
+
+collectd_plugin_disk: false
+collectd_plugin_disk_disk:
+  - "/^[hsv]d[a-z][0-9]?$/"
+collectd_plugin_disk_ignoreselected: "false"
+#collectd_plugin_disk_usebsdname: "false"
+#collectd_plugin_disk_udevnameattr: "DEVNAME"
+
+collectd_plugin_interface: true
+collectd_plugin_interface_interface:
+  - "eth0"
+collectd_plugin_interface_ignoreselected: "false"
+collectd_plugin_interface_reportinactive: "true"
+#collectd_plugin_interface_uniquename: "false"
+
+collectd_plugin_load: true
+collectd_plugin_load_reportrelative: "false"
+
+collectd_plugin_md: false
+collectd_plugin_md_device:
+  - /dev/md0
+collectd_plugin_md_ignoreselected: "false"
+
+collectd_plugin_memory: true
+collectd_plugin_memory_valuesabsolute: "true"
+collectd_plugin_memory_valuespercentage: "false"
+
+collectd_plugin_processes: false
+#collectd_plugin_processes_process:
+#  - name
+#collectd_plugin_processes_processmatch:
+#  - name: foo
+#    regex: /foo/
+#collectd_plugin_processes_collectcontextswitch: "false"
+
+collectd_plugin_protocols: false
+collectd_plugin_protocols_value:
+  - "/^Tcp:/"
+collectd_plugin_protocols_ignoreselected: "false"
+
+collectd_plugin_rrdtool: true
+collectd_plugin_rrdtool_datadir: /var/lib/collectd/rrd
+collectd_plugin_rrdtool_createfileasync: "false"
+collectd_plugin_rrdtool_cachetimeout: 120
+collectd_plugin_rrdtool_cacheflush: 900
+collectd_plugin_rrdtool_writepersecond: 50
