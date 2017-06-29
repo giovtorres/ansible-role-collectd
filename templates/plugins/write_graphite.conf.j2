@@ -1,0 +1,47 @@
+LoadPlugin write_graphite
+
+<Plugin write_graphite>
+{% for node in collectd_plugin_write_graphite_nodes %}
+  <Node "{{ node.node }}">
+{% if node.host is defined %}
+    Host "{{ node.host }}"
+{% endif %}
+{% if node.port is defined %}
+    Port "{{ node.port }}"
+{% endif %}
+{% if node.protocol is defined %}
+    Protocol "{{ node.protocol }}"
+{% endif %}
+{% if node.reconnectinterval is defined %}
+    ReconnectInterval {{ node.reconnectinterval }}
+{% endif %}
+{% if node.logsenderrors is defined %}
+    LogSendErrors {{ node.logsenderrors }}
+{% endif %}
+{% if node.prefix is defined %}
+    Prefix "{{ node.prefix }}"
+{% endif %}
+{% if node.postfix is defined %}
+    Postfix "{{ node.postfix }}"
+{% endif %}
+{% if node.storerates is defined %}
+    StoreRates {{ node.storerates }}
+{% endif %}
+{% if node.alwaysappendds is defined %}
+    AlwaysAppendDS {{ node.alwaysappendds }}
+{% endif %}
+{% if node.escapecharacter is defined %}
+    EscapeCharacter "{{ node.escapecharacter }}"
+{% endif %}
+{% if node.separateinstances is defined %}
+    SeparateInstances {{ node.separateinstances }}
+{% endif %}
+{% if node.preserveseparator is defined %}
+    PreserveSeparator {{ node.preserveseparator }}
+{% endif %}
+{% if node.dropduplicatefields is defined %}
+    DropDuplicateFields {{ node.dropduplicatefields }}
+{% endif %}
+  </Node>
+{% endfor %}
+</Plugin>

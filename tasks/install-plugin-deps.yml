@@ -14,3 +14,24 @@
   when:
     - collectd_plugin_rrdtool is defined
     - collectd_plugin_rrdtool
+
+- name: Install disk plugin dependency.
+  yum:
+    name: collectd-dns
+  when:
+    - collectd_plugin_dns is defined
+    - collectd_plugin_dns
+
+- name: Install write_http plugin dependency.
+  yum:
+    name: collectd-write_http
+  when:
+    - collectd_plugin_write_http is defined
+    - collectd_plugin_write_http
+
+- name: Install write_prometheus plugin dependency.
+  yum:
+    name: collectd-write_prometheus
+  when:
+    - collectd_plugin_write_prometheus is defined
+    - collectd_plugin_write_prometheus

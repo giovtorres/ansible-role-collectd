@@ -1,7 +1,7 @@
 LoadPlugin md
 
 <Plugin md>
-{% for device in collectd_plugin_md_device %}
+{% for device in collectd_plugin_md_devices %}
   Device "{{ device }}"
 {% endfor %}
   IgnoreSelected {{ collectd_plugin_md_ignoreselected }}

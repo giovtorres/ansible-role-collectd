@@ -1,0 +1,7 @@
+LoadPlugin dns
+
+<Plugin dns>
+  Interface "{{ collectd_plugin_dns_interface }}"
+  IgnoreSource "{{ collectd_plugin_dns_ignoresource }}"
+  SelectNumericQueryTypes {{ collectd_plugin_dns_selectnumericquerytypes }}
+</Plugin>

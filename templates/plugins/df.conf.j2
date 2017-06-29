@@ -1,18 +1,18 @@
 LoadPlugin df
 
 <Plugin df>
-{% if collectd_plugin_df_device is defined %}
-{% for device in collectd_plugin_df_device %}
+{% if collectd_plugin_df_devices is defined %}
+{% for device in collectd_plugin_df_devices %}
   Device "{{ device }}"
 {% endfor %}
 {% endif %}
-{% if collectd_plugin_df_mountpoint is defined %}
-{% for mountpoint in collectd_plugin_df_mountpoint %}
+{% if collectd_plugin_df_mountpoints is defined %}
+{% for mountpoint in collectd_plugin_df_mountpoints %}
   MountPoint "{{ mountpoint }}"
 {% endfor %}
 {% endif %}
-{% if collectd_plugin_df_fstype is defined %}
-{% for fstype in collectd_plugin_df_fstype %}
+{% if collectd_plugin_df_fstypes is defined %}
+{% for fstype in collectd_plugin_df_fstypes %}
   FSType "{{ fstype }}"
 {% endfor %}
 {% endif %}

@@ -1,7 +1,7 @@
 LoadPlugin interface
 
 <Plugin interface>
-{% for interface in collectd_plugin_interface_interface %}
+{% for interface in collectd_plugin_interface_interfaces %}
   Interface "{{ interface }}"
 {% endfor %}
   IgnoreSelected {{ collectd_plugin_interface_ignoreselected }}

@@ -2,6 +2,11 @@
 - hosts: all
   vars:
     collectd_plugin_contextswitch: true
+    collectd_plugin_conntrack: true
+    collectd_plugin_cpufreq: true
+    # cpusleep.so is missing from EL6
+    #collectd_plugin_cpusleep: true
+    collectd_plugin_csv: true
     collectd_plugin_df: true
     collectd_plugin_df_fstype:
       - xfs

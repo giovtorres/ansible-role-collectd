@@ -90,6 +90,10 @@ See the online manpage for collectd.conf(5) at
 https://collectd.org/documentation/manpages/collectd.conf.5.shtml for plugin
 options.
 
+#### Conntrack Plugin
+
+    collectd_plugin_conntrack: "false"
+
 #### Contextswitch Plugin
 
     collectd_plugin_contextswitch: false
@@ -100,14 +104,26 @@ options.
     collectd_plugin_cpu_reportbystate: "true"
     collectd_plugin_cpu_valuespercentage: "false"
 
+#### Cpufreq Plugin
+
+    collectd_plugin_cpufreq: "false"
+
+#### Cpusleep Plugin
+
+    collectd_plugin_cpusleep: "false"
+
+#### CSV Plugin
+
+    collectd_plugin_csv: "false"
+
 #### DF Plugin
 
     collectd_plugin_df: false
-    #collectd_plugin_df_device:
+    #collectd_plugin_df_devices:
     #  - /dev/sda1
-    #collectd_plugin_df_mountpoint:
+    #collectd_plugin_df_mountpoints:
     #  - 192.168.0.2:/mnt/nfs
-    #collectd_plugin_df_fstype:
+    #collectd_plugin_df_fstypes:
     #  - ext4
     collectd_plugin_df_ignoreselected: "false"
     collectd_plugin_df_reportbydevice: "false"
@@ -118,16 +134,23 @@ options.
 #### Disk Plugin
 
     collectd_plugin_disk: false
-    collectd_plugin_disk_disk:
+    collectd_plugin_disk_disks:
       - "/^[hsv]d[a-z][0-9]?$/"
     collectd_plugin_disk_ignoreselected: "false"
     #collectd_plugin_disk_usebsdname: "false"
     #collectd_plugin_disk_udevnameattr: "DEVNAME"
 
+#### DNS Plugin
+
+    collectd_plugin_dns: false
+    #collectd_plugin_dns_interface: "eth0"
+    #collectd_plugin_dns_ignoresourc: "192.168.0.1"
+    collectd_plugin_dns_selectnumericquerytypes: "true"
+
 #### Interface Plugin
 
     collectd_plugin_interface: true
-    collectd_plugin_interface_interface:
+    collectd_plugin_interface_interfaces:
       - "eth0"
     collectd_plugin_interface_ignoreselected: "false"
     collectd_plugin_interface_reportinactive: "true"
@@ -141,7 +164,7 @@ options.
 #### MD Plugin
 
     collectd_plugin_md: false
-    collectd_plugin_md_device:
+    collectd_plugin_md_devices:
       - /dev/md0
     collectd_plugin_md_ignoreselected: "false"
 
@@ -154,9 +177,9 @@ options.
 #### Processes Plugin
 
     collectd_plugin_processes: false
-    #collectd_plugin_processes_process:
+    #collectd_plugin_processes_processes:
     #  - name
-    #collectd_plugin_processes_processmatch:
+    #collectd_plugin_processes_processmatches:
     #  - name: foo
     #    regex: /foo/
     #collectd_plugin_processes_collectcontextswitch: "false"
@@ -164,18 +187,70 @@ options.
 #### Protocols Plugin
 
     collectd_plugin_protocols: false
-    collectd_plugin_protocols_value:
+    collectd_plugin_protocols_values:
       - "/^Tcp:/"
     collectd_plugin_protocols_ignoreselected: "false"
 
 #### RRDTool Plugin
 
     collectd_plugin_rrdtool: true
-    collectd_plugin_rrdtool_datadir: /var/lib/collectd/rrd
+    collectd_plugin_rrdtool_datadir: {{ collectd_conf_basedir }}/rrd
     collectd_plugin_rrdtool_createfileasync: "false"
     collectd_plugin_rrdtool_cachetimeout: 120
     collectd_plugin_rrdtool_cacheflush: 900
     collectd_plugin_rrdtool_writepersecond: 50
+
+#### Write_graphite Plugin
+
+    collectd_plugin_write_graphite: false
+    #collectd_plugin_write_graphite_nodes:
+    #  - node: example
+    #    host: localhost
+    #    port: 2003
+    #    protocol: tcp
+    #    reconnectinterval: 0
+    #    logsenderrors: "true"
+    #    prefix: "collectd"
+    #    postfix: "collectd"
+    #    escapecharacter: "_"
+    #    storerates: "true"
+    #    alwaysappendds: "false"
+    #    preserveseparator: "false"
+    #    dropduplicatefields: "false"
+
+#### write_http Plugin
+
+    collectd_plugin_write_http: false
+    #collectd_plugin_write_http_nodes:
+    #  - node: example
+    #    url: http://example.com/collectd-post
+    #    user: collectd
+    #    password: foo
+    #    verifypeer: "true"
+    #    verifyhost: "true"
+    #    cacert: /etc/pki/tls/certs/ca-bundle.crt
+    #    capath: /etc/pki/tls/certs
+    #    clientkey: /etc/pki/tls/certs/localhost.key
+    #    clientcert: /etc/pki/tls/certs/localhost.crt
+    #    clientkeypass: secret
+    #    headers:
+    #      - "X-Custom-Header: custom_value"
+    #    sslversion: TLSv1
+    #    format: Command
+    #    metrics: "true"
+    #    notifications: "false"
+    #    storerates: "false"
+    #    buffersize: 4096
+    #    lowspeedlimit: 0
+    #    timeout: 0
+    #    loghttperror: "false"
+
+#### write_prometheus Plugin
+
+    collectd_plugin_write_prometheus: false
+    collectd_plugin_write_prometheus_port: "9103"
+    #collectd_plugin_write_prometheus_stalenessdelta: "300"
+
 
 ## Dependencies
 

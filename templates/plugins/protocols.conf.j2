@@ -1,7 +1,7 @@
 LoadPlugin protocols
 
 <Plugin protocols>
-{% for value in collectd_plugin_protocols_value %}
+{% for value in collectd_plugin_protocols_values %}
   Value "{{ value }}"
 {% endfor %}
   IgnoreSelected {{ collectd_plugin_protocols_ignoreselected }}

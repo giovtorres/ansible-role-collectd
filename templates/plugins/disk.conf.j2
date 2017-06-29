@@ -1,7 +1,7 @@
 LoadPlugin disk
 
 <Plugin disk>
-{% for disk in collectd_plugin_disk_disk %}
+{% for disk in collectd_plugin_disk_disks %}
   Disk "{{ disk }}"
 {% endfor %}
   IgnoreSelected {{ collectd_plugin_disk_ignoreselected }}

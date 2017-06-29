@@ -1,13 +1,13 @@
 LoadPlugin processes
 
 <Plugin processes>
-{% if collectd_plugin_processes_process is defined %}
-{% for process in collectd_plugin_processes_process %}
+{% if collectd_plugin_processes_processes is defined %}
+{% for process in collectd_plugin_processes_processes %}
   Process "{{ process }}"
 {% endfor %}
 {% endif %}
-{% if collectd_plugin_processes_processmatch is defined %}
-{% for processmatch in collectd_plugin_processes_processmatch %}
+{% if collectd_plugin_processes_processmatches is defined %}
+{% for processmatch in collectd_plugin_processes_processmatches %}
   ProcessMatch {{ processmatch.name }} {{ processmatch.regex }}
 {% endfor %}
 {% endif %}

@@ -1,0 +1,62 @@
+LoadPlugin write_http
+
+<Plugin write_http>
+{% for node in collectd_plugin_write_http_nodes %}
+  <Node "{{ node.node }}">
+    URL "{{ node.url }}"
+{% if node.user is defined %}
+    User "{{ node.user }}"
+{% endif %}
+{% if node.password is defined %}
+    Password "{{ node.password }}"
+{% endif %}
+    VerifyPeer {{ node.verifypeer }}
+    VerifyHost {{ node.verifyhost }}
+{% if node.cacert is defined %}
+    CACert "{{ node.cacert }}"
+{% endif %}
+{% if node.capath is defined %}
+    CAPath "{{ node.capath }}"
+{% endif %}
+{% if node.clientkey is defined %}
+    ClientKey "{{ node.clientkey }}"
+{% endif %}
+{% if node.clientcert is defined %}
+    ClientCert "{{ node.clientcert }}"
+{% endif %}
+{% if node.clientkeypass is defined %}
+    ClientKeyPass "{{ node.clientkeypass }}"
+{% endif %}
+{% for header in node.headers %}
+    Header "{{ header }}"
+{% endfor %}
+{% if node.sslversion is defined %}
+    SSLVersion "{{ node.sslversion }}""
+{% endif %}
+{% if node.format is defined %}
+    Format "{{ node.format }}"
+{% endif %}
+{% if node.metrics is defined %}
+    Metrics {{ node.metrics }}
+{% endif %}
+{% if node.notifications is defined %}
+    Notifications {{ node.notifications }}
+{% endif %}
+{% if node.storerates is defined %}
+    StoreRates {{ node.storerates }}
+{% endif %}
+{% if node.buffersize is defined %}
+    BufferSize {{ node.buffersize }}
+{% endif %}
+{% if node.lowspeedlimit is defined %}
+    LowSpeedLimit {{ node.lowspeedlimit }}
+{% endif %}
+{% if node.timeout is defined %}
+    Timeout {{ node.timeout }}
+{% endif %}
+{% if node.loghttperror is defined %}
+    LogHttpError {{ node.loghttperror }}
+{% endif %}
+  </Node>
+{% endfor %}
+</Plugin>
