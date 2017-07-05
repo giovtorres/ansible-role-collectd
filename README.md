@@ -175,6 +175,13 @@ options.
     collectd_plugin_memory_valuesabsolute: "true"
     collectd_plugin_memory_valuespercentage: "false"
 
+#### Plugin ntpd
+
+    collectd_plugin_ntpd: false
+    collectd_plugin_ntpd_host: ""
+    collectd_plugin_ntpd_reverselookups: "false"
+    collectd_plugin_ntpd_includeunitid: "true"
+
 #### Plugin processes
 
     collectd_plugin_processes: false
@@ -260,6 +267,10 @@ options.
     collectd_plugin_write_prometheus_port: "9103"
     #collectd_plugin_write_prometheus_stalenessdelta: "300"
 
+#### Plugin vmem
+
+    collectd_plugin_vmem: false
+    collectd_plugin_vmem_verbose: "false"
 
 ## Dependencies
 

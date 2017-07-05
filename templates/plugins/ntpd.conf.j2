@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+#
+LoadPlugin ntpd
+
+<Plugin ntpd>
+  Host "{{ collectd_plugin_ntpd_host }}"
+  Port 123
+  ReverseLookups {{ collectd_plugin_ntpd_reverselookups }}
+  IncludeUnitID {{ collectd_plugin_ntpd_includeunitid }}
+</Plugin>

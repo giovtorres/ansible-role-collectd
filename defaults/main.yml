@@ -88,6 +88,11 @@ collectd_plugin_memory: true
 collectd_plugin_memory_valuesabsolute: "true"
 collectd_plugin_memory_valuespercentage: "false"
 
+collectd_plugin_ntpd: false
+collectd_plugin_ntpd_host: ""
+collectd_plugin_ntpd_reverselookups: "false"
+collectd_plugin_ntpd_includeunitid: "true"
+
 collectd_plugin_processes: false
 #collectd_plugin_processes_processes:
 #  - name
@@ -158,3 +163,6 @@ collectd_plugin_write_http: false
 collectd_plugin_write_prometheus: false
 collectd_plugin_write_prometheus_port: "9103"
 #collectd_plugin_write_prometheus_stalenessdelta: "300"
+
+collectd_plugin_vmem: false
+collectd_plugin_vmem_verbose: "false"
