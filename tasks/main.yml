@@ -30,6 +30,16 @@
     group: root
     mode: 0755
 
+- name: Copy Collectd global configuration.
+  template:
+    src: collectd.conf.j2
+    dest: "{{ collectd_global_config }}"
+    owner: root
+    group: root
+    mode: 0644
+#  validate: collectd -c -T
+  notify: restart collectd
+
 - name: Enable and configure plugins.
   template:
     src: "{{ item }}"
@@ -50,16 +60,6 @@
     state: absent
   with_fileglob: "../templates/plugins/*conf.j2"
   when: not vars['collectd_plugin_' + item | basename | regex_replace('\\.conf\\.j2', '')]
-  notify: restart collectd
-
-- name: Copy Collectd global configuration.
-  template:
-    src: collectd.conf.j2
-    dest: "{{ collectd_global_config }}"
-    owner: root
-    group: root
-    mode: 0644
-#  validate: collectd -c -T
   notify: restart collectd
 
 - name: Enable collectd and start at boot time.
