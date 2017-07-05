@@ -166,5 +166,7 @@ collectd_plugin_write_prometheus: false
 collectd_plugin_write_prometheus_port: "9103"
 #collectd_plugin_write_prometheus_stalenessdelta: "300"
 
+collectd_plugin_uptime: false
+
 collectd_plugin_vmem: false
 collectd_plugin_vmem_verbose: "false"

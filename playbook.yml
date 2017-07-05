@@ -18,6 +18,7 @@
     collectd_plugin_protocols: true
     collectd_plugin_swap: true
     collectd_plugin_swap_reportbytes: "true"
+    collectd_plugin_uptime: true
     collectd_plugin_vmem: true
 
   roles:

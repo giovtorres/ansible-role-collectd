@@ -271,6 +271,10 @@ options.
     collectd_plugin_write_prometheus_port: "9103"
     #collectd_plugin_write_prometheus_stalenessdelta: "300"
 
+#### Plugin uptime
+
+    collectd_plugin_uptime: false
+
 #### Plugin vmem
 
     collectd_plugin_vmem: false
