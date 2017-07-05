@@ -15,7 +15,7 @@
     - collectd_plugin_rrdtool is defined
     - collectd_plugin_rrdtool
 
-- name: Install disk plugin dependency.
+- name: Install dns plugin dependency.
   yum:
     name: collectd-dns
   when:
