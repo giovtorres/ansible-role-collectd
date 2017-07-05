@@ -10,6 +10,7 @@
     collectd_plugin_df: true
     collectd_plugin_df_fstype:
       - xfs
+    collectd_plugin_entropy: true
     collectd_plugin_disk: true
     collectd_plugin_processes: true
     collectd_plugin_processes_process:
