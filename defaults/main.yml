@@ -90,6 +90,8 @@ collectd_plugin_memory: true
 collectd_plugin_memory_valuesabsolute: "true"
 collectd_plugin_memory_valuespercentage: "false"
 
+collectd_plugin_nfs: false
+
 collectd_plugin_ntpd: false
 collectd_plugin_ntpd_host: ""
 collectd_plugin_ntpd_reverselookups: "false"

@@ -179,6 +179,10 @@ options.
     collectd_plugin_memory_valuesabsolute: "true"
     collectd_plugin_memory_valuespercentage: "false"
 
+#### Plugin nfs
+
+    collectd_plugin_nfs: false
+
 #### Plugin ntpd
 
     collectd_plugin_ntpd: false
