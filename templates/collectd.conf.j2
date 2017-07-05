@@ -12,7 +12,7 @@
 ##############################################################################
 
 {% if collectd_conf_hostname is defined %}
-Hostname    "collectd_conf_hostname"
+Hostname    "{{ collectd_conf_hostname }}"
 {% endif %}
 FQDNLookup   {{ collectd_conf_fqdnlookup }}
 BaseDir     "{{ collectd_conf_basedir }}"
