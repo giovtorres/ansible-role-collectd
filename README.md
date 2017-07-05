@@ -42,8 +42,8 @@ The default global collectd configuration file:
 
 Global settings for the daemon:
 
-    #collectd_conf_hostname: {{ inventory_hostname }}
-    collectd_conf_fqdnlookup: "true"
+    collectd_conf_hostname: "{{ ansible_hostname }}"
+    collectd_conf_fqdnlookup: "false"
     collectd_conf_basedir: /var/lib/collectd
     collectd_conf_pidfile: /var/run/collectd.pid
     collectd_conf_plugindir: /usr/lib64/collectd
