@@ -148,6 +148,10 @@ options.
     #collectd_plugin_dns_ignoresourc: "192.168.0.1"
     collectd_plugin_dns_selectnumericquerytypes: "true"
 
+#### Plugin entropy
+
+    collectd_plugin_entropy: false
+
 #### Plugin interface
 
     collectd_plugin_interface: true

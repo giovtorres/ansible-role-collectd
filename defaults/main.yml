@@ -69,6 +69,8 @@ collectd_plugin_dns: false
 #collectd_plugin_dns_ignoresourc: "192.168.0.1"
 collectd_plugin_dns_selectnumericquerytypes: "true"
 
+collectd_plugin_entropy: false
+
 collectd_plugin_interface: true
 collectd_plugin_interface_interfaces:
   - "eth0"
