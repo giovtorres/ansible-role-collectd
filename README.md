@@ -275,6 +275,10 @@ options.
 
     collectd_plugin_uptime: false
 
+#### Plugin users
+
+    collectd_plugin_users: false
+
 #### Plugin vmem
 
     collectd_plugin_vmem: false
