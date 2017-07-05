@@ -90,33 +90,34 @@ See the online manpage for collectd.conf(5) at
 https://collectd.org/documentation/manpages/collectd.conf.5.shtml for plugin
 options.
 
-#### Conntrack Plugin
+#### Plugin conntrack
 
     collectd_plugin_conntrack: "false"
 
-#### Contextswitch Plugin
+#### Plugin contextswitch
 
     collectd_plugin_contextswitch: false
 
-#### CPU Plugin
+#### Plugin cpu
+
     collectd_plugin_cpu: true
     collectd_plugin_cpu_reportbycpu: "true"
     collectd_plugin_cpu_reportbystate: "true"
     collectd_plugin_cpu_valuespercentage: "false"
 
-#### Cpufreq Plugin
+#### Plugin cpufreq
 
     collectd_plugin_cpufreq: "false"
 
-#### Cpusleep Plugin
+#### Plugin cpusleep
 
     collectd_plugin_cpusleep: "false"
 
-#### CSV Plugin
+#### Plugin csv
 
     collectd_plugin_csv: "false"
 
-#### DF Plugin
+#### Plugin df
 
     collectd_plugin_df: false
     #collectd_plugin_df_devices:
@@ -131,7 +132,7 @@ options.
     collectd_plugin_df_valuesabsolute: "true"
     collectd_plugin_df_valuespercentage: "false"
 
-#### Disk Plugin
+#### Plugin disk
 
     collectd_plugin_disk: false
     collectd_plugin_disk_disks:
@@ -140,14 +141,14 @@ options.
     #collectd_plugin_disk_usebsdname: "false"
     #collectd_plugin_disk_udevnameattr: "DEVNAME"
 
-#### DNS Plugin
+#### Plugin dns
 
     collectd_plugin_dns: false
     #collectd_plugin_dns_interface: "eth0"
     #collectd_plugin_dns_ignoresourc: "192.168.0.1"
     collectd_plugin_dns_selectnumericquerytypes: "true"
 
-#### Interface Plugin
+#### Plugin interface
 
     collectd_plugin_interface: true
     collectd_plugin_interface_interfaces:
@@ -156,25 +157,25 @@ options.
     collectd_plugin_interface_reportinactive: "true"
     #collectd_plugin_interface_uniquename: "false"
 
-#### Load Plugin
+#### Plugin load
 
     collectd_plugin_load: true
     collectd_plugin_load_reportrelative: "false"
 
-#### MD Plugin
+#### Plugin md
 
     collectd_plugin_md: false
     collectd_plugin_md_devices:
       - /dev/md0
     collectd_plugin_md_ignoreselected: "false"
 
-#### Memory Plugin
+#### Plugin memory
 
     collectd_plugin_memory: true
     collectd_plugin_memory_valuesabsolute: "true"
     collectd_plugin_memory_valuespercentage: "false"
 
-#### Processes Plugin
+#### Plugin processes
 
     collectd_plugin_processes: false
     #collectd_plugin_processes_processes:
@@ -184,14 +185,14 @@ options.
     #    regex: /foo/
     #collectd_plugin_processes_collectcontextswitch: "false"
 
-#### Protocols Plugin
+#### Plugin protocols
 
     collectd_plugin_protocols: false
     collectd_plugin_protocols_values:
       - "/^Tcp:/"
     collectd_plugin_protocols_ignoreselected: "false"
 
-#### RRDTool Plugin
+#### Plugin rrdtool
 
     collectd_plugin_rrdtool: true
     collectd_plugin_rrdtool_datadir: {{ collectd_conf_basedir }}/rrd
@@ -200,7 +201,7 @@ options.
     collectd_plugin_rrdtool_cacheflush: 900
     collectd_plugin_rrdtool_writepersecond: 50
 
-#### Swap Plugin
+#### Plugin swap
 
     collectd_plugin_swap: false
     collectd_plugin_swap_reportbydevice: "false"
@@ -208,7 +209,7 @@ options.
     collectd_plugin_swap_valuesabsolute: "true"
     collectd_plugin_swap_valuespercentage: "false"
 
-#### Write_graphite Plugin
+#### Plugin write_graphite
 
     collectd_plugin_write_graphite: false
     #collectd_plugin_write_graphite_nodes:
@@ -226,7 +227,7 @@ options.
     #    preserveseparator: "false"
     #    dropduplicatefields: "false"
 
-#### write_http Plugin
+#### Plugin write_http
 
     collectd_plugin_write_http: false
     #collectd_plugin_write_http_nodes:
@@ -253,7 +254,7 @@ options.
     #    timeout: 0
     #    loghttperror: "false"
 
-#### write_prometheus Plugin
+#### Plugin write_prometheus
 
     collectd_plugin_write_prometheus: false
     collectd_plugin_write_prometheus_port: "9103"
