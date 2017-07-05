@@ -200,6 +200,14 @@ options.
     collectd_plugin_rrdtool_cacheflush: 900
     collectd_plugin_rrdtool_writepersecond: 50
 
+#### Swap Plugin
+
+    collectd_plugin_swap: false
+    collectd_plugin_swap_reportbydevice: "false"
+    collectd_plugin_swap_reportbytes: "false"
+    collectd_plugin_swap_valuesabsolute: "true"
+    collectd_plugin_swap_valuespercentage: "false"
+
 #### Write_graphite Plugin
 
     collectd_plugin_write_graphite: false
