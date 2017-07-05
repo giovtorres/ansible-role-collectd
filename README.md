@@ -190,6 +190,10 @@ options.
     collectd_plugin_ntpd_reverselookups: "false"
     collectd_plugin_ntpd_includeunitid: "true"
 
+#### Plugin numa
+
+    collectd_plugin_numa: false
+
 #### Plugin processes
 
     collectd_plugin_processes: false

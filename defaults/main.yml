@@ -97,6 +97,8 @@ collectd_plugin_ntpd_host: ""
 collectd_plugin_ntpd_reverselookups: "false"
 collectd_plugin_ntpd_includeunitid: "true"
 
+collectd_plugin_numa: false
+
 collectd_plugin_processes: false
 #collectd_plugin_processes_processes:
 #  - name
