@@ -1,0 +1,12 @@
+# {{ ansible_managed }}
+#
+LoadPlugin cgroups
+
+<Plugin cgroups>
+{% if collectd_plugin_cgroups_cgroups %}
+{% for cgroup in collectd_plugin_cgroups_cgroups %}
+  CGroup "{{ cgroup }}"
+{% endfor %}
+{% endif %}
+  IgnoreSelected {{ collectd_plugin_cgroups_ignoreselected }}
+</Plugin>

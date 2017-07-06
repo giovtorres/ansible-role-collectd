@@ -30,6 +30,11 @@ collectd_conf_include_dir: /etc/collectd.d
 
 ## Plugin Configuration
 
+collectd_plugin_cgroups: false
+#collectd_plugin_cgroups_cgroup:
+# - libvirt
+collectd_plugin_cgroups_ignoreselected: "false"
+
 collectd_plugin_contextswitch: false
 collectd_plugin_conntrack: false
 collectd_plugin_cpufreq: false
@@ -171,7 +176,6 @@ collectd_plugin_write_prometheus_port: "9103"
 #collectd_plugin_write_prometheus_stalenessdelta: "300"
 
 collectd_plugin_uptime: false
-
 collectd_plugin_users: false
 
 collectd_plugin_vmem: false

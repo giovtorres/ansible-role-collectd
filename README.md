@@ -90,6 +90,13 @@ See the online manpage for collectd.conf(5) at
 https://collectd.org/documentation/manpages/collectd.conf.5.shtml for plugin
 options.
 
+#### Plugin cgroups
+
+    collectd_plugin_cgroups: false
+    #collectd_plugin_cgroups_cgroup:
+    #  - "libvirt"
+    collectd_plugin_cgroups_ignoreselected: "false"
+
 #### Plugin conntrack
 
     collectd_plugin_conntrack: "false"
