@@ -3,7 +3,7 @@
 LoadPlugin cgroups
 
 <Plugin cgroups>
-{% if collectd_plugin_cgroups_cgroups %}
+{% if collectd_plugin_cgroups_cgroups is defined %}
 {% for cgroup in collectd_plugin_cgroups_cgroups %}
   CGroup "{{ cgroup }}"
 {% endfor %}
