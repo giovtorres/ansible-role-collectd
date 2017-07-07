@@ -36,6 +36,13 @@
     - collectd_plugin_nut is defined
     - collectd_plugin_nut
 
+- name: Install virt plugin dependency.
+  yum:
+    name: collectd-virt
+  when:
+    - collectd_plugin_virt is defined
+    - collectd_plugin_virt
+
 - name: Install write_http plugin dependency.
   yum:
     name: collectd-write_http

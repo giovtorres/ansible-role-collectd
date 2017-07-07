@@ -281,6 +281,21 @@ options.
     #collectd_plugin_tcpconns_remoteport: ""
     collectd_plugin_tcpconns_allportssummary: "false"
 
+#### [Plugin virt](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_virt)
+
+    collectd_plugin_virt: false
+    collectd_plugin_virt_connection: "qemu:///system"
+    #collectd_plugin_virt_refreshinterval: "60"
+    #collectd_plugin_virt_domain: "name"
+    #collectd_plugin_virt_blockdevice: "name:device"
+    #collectd_plugin_virt_blockdeviceformat: "target"
+    #collectd_plugin_virt_blockdeviceformatbasename: "false"
+    #collectd_plugin_virt_interfacedevice: "name:device"
+    #collectd_plugin_virt_ignoreselected: "false"
+    #collectd_plugin_virt_hostnameformat: "name"
+    #collectd_plugin_virt_interfaceformat: "name"
+    #collectd_plugin_virt_plugininstanceformat: "name"
+
 #### Plugin write_graphite
 
     collectd_plugin_write_graphite: false

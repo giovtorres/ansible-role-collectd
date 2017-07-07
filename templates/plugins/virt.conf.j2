@@ -1,0 +1,37 @@
+# {{ ansible_managed }}
+#
+LoadPlugin virt
+
+<Plugin virt>
+  Connection "{{ collectd_plugin_virt_connection }}"
+{% if collectd_plugin_virt_refreshinterval is defined %}
+  RefreshInterval {{ collectd_plugin_virt_refreshinterval }}
+{% endif %}
+{% if collectd_plugin_virt_domain is defined %}
+  Domain "{{ collectd_plugin_virt_domain }}"
+{% endif %}
+{% if collectd_plugin_virt_blockdevice is defined %}
+  BlockDevice "{{ collectd_plugin_virt_blockdevice }}"
+{% endif %}
+{% if collectd_plugin_virt_blockdeviceformat is defined %}
+  BlockDeviceFormat {{ collectd_plugin_virt_blockdeviceformat }}
+{% endif %}
+{% if collectd_plugin_virt_blockdeviceformatbasename is defined %}
+  BlockDeviceFormatBasename {{ collectd_plugin_virt_blockdeviceformatbasename }}
+{% endif %}
+{% if collectd_plugin_virt_interfacedevice is defined %}
+  InterfaceDevice "{{ collectd_plugin_virt_interfacedevice }}"
+{% endif %}
+{% if collectd_plugin_virt_ignoreselected is defined %}
+  IgnoreSelected {{ collectd_plugin_virt_ignoreselected }}
+{% endif %}
+{% if collectd_plugin_virt_hostnameformat is defined %}
+  HostnameFormat {{ collectd_plugin_virt_hostnameformat }}
+{% endif %}
+{% if collectd_plugin_virt_interfaceformat is defined %}
+  InterfaceFormat {{ collectd_plugin_virt_interfaceformat }}
+{% endif %}
+{% if collectd_plugin_virt_plugininstanceformat is defined %}
+  PluginInstanceFormat {{ collectd_plugin_virt_plugininstanceformat }}
+{% endif %}
+</Plugin>
