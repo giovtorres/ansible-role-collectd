@@ -165,6 +165,9 @@ collectd_plugin_tcpconns_listeningports: "false"
 #collectd_plugin_tcpconns_remoteport: ""
 collectd_plugin_tcpconns_allportssummary: "false"
 
+collectd_plugin_uuid: false
+#collectd_plugin_uuid_uuidfile: "/etc/uuid"
+
 collectd_plugin_virt: false
 collectd_plugin_virt_connection: "qemu:///system"
 #collectd_plugin_virt_refreshinterval: "60"

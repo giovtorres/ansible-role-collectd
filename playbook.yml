@@ -22,6 +22,7 @@
     collectd_plugin_swap_reportbytes: "true"
     collectd_plugin_uptime: true
     collectd_plugin_users: true
+    collectd_plugin_uuid: true
     collectd_plugin_vmem: true
 
   roles:

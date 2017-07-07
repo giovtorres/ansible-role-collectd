@@ -1,0 +1,9 @@
+# {{ ansible_managed }}
+#
+LoadPlugin uuid
+
+<Plugin uuid>
+{% if collectd_plugin_uuid_uuidfile is defined %}
+  UUIDFile "{{ collectd_plugin_uuid_uuidfile }}"
+{% endif %}
+</Plugin>

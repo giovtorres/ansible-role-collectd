@@ -281,6 +281,19 @@ options.
     #collectd_plugin_tcpconns_remoteport: ""
     collectd_plugin_tcpconns_allportssummary: "false"
 
+#### [Plugin uptime](https://collectd.org/wiki/index.php/Plugin:Uptime)
+
+    collectd_plugin_uptime: false
+
+#### [Plugin users](https://collectd.org/wiki/index.php/Plugin:Users)
+
+    collectd_plugin_users: false
+
+#### [Plugin uuid](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_uuid)
+
+    collectd_plugin_uuid: false
+    #collectd_plugin_uuid_uuidfile: "/etc/uuid"
+
 #### [Plugin virt](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_virt)
 
     collectd_plugin_virt: false
@@ -296,7 +309,12 @@ options.
     #collectd_plugin_virt_interfaceformat: "name"
     #collectd_plugin_virt_plugininstanceformat: "name"
 
-#### Plugin write_graphite
+#### [Plugin vmem](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_vmem)
+
+    collectd_plugin_vmem: false
+    collectd_plugin_vmem_verbose: "false"
+
+#### [Plugin write_graphite](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_write_graphite)
 
     collectd_plugin_write_graphite: false
     #collectd_plugin_write_graphite_nodes:
@@ -346,19 +364,6 @@ options.
     collectd_plugin_write_prometheus: false
     collectd_plugin_write_prometheus_port: "9103"
     #collectd_plugin_write_prometheus_stalenessdelta: "300"
-
-#### Plugin uptime
-
-    collectd_plugin_uptime: false
-
-#### Plugin users
-
-    collectd_plugin_users: false
-
-#### Plugin vmem
-
-    collectd_plugin_vmem: false
-    collectd_plugin_vmem_verbose: "false"
 
 ## Dependencies
 
