@@ -190,6 +190,14 @@ options.
 
     collectd_plugin_nfs: false
 
+#### [Plugin nginx](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_nginx)
+
+    collectd_plugin_nginx: false
+    collectd_plugin_nginx_url: "http://localhost/status?auto"
+    #collectd_plugin_nginx_user: nginx
+    #collectd_plugin_nginx_password: ""
+    collectd_plugin_nginx_cacert: /etc/pki/tls/certs/ca-bundle.crt
+
 #### Plugin ntpd
 
     collectd_plugin_ntpd: false

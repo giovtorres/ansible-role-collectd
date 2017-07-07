@@ -1,0 +1,14 @@
+# {{ ansible_managed }}
+#
+LoadPlugin nginx
+
+<Plugin nginx>
+  URL "{{ collectd_plugin_nginx_url }}"
+{% if collectd_plugin_nginx_user is defined %}
+  User "www-user"
+{% endif %}
+{% if collectd_plugin_nginx_password is defined %}
+  Password "secret"
+{% endif %}
+  CACert "{{ collectd_plugin_nginx_cacert }}"
+</Plugin>

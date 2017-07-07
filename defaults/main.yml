@@ -97,6 +97,12 @@ collectd_plugin_memory_valuespercentage: "false"
 
 collectd_plugin_nfs: false
 
+collectd_plugin_nginx: false
+collectd_plugin_nginx_url: "http://localhost/status?auto"
+#collectd_plugin_nginx_user: nginx
+#collectd_plugin_nginx_password: ""
+collectd_plugin_nginx_cacert: /etc/pki/tls/certs/ca-bundle.crt
+
 collectd_plugin_ntpd: false
 collectd_plugin_ntpd_host: ""
 collectd_plugin_ntpd_reverselookups: "false"
