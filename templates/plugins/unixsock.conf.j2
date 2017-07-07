@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+#
+LoadPlugin unixsock
+
+<Plugin unixsock>
+  SocketFile "{{ collectd_plugin_unixsock_socketfile }}"
+  SocketGroup "{{ collectd_plugin_unixsock_socketgroup }}"
+  SocketPerms "{{ collectd_plugin_unixsock_socketperms }}"
+  DeleteSocket {{ collectd_plugin_unixsock_deletesocket }}"
+</Plugin>

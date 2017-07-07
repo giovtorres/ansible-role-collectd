@@ -281,6 +281,14 @@ options.
     #collectd_plugin_tcpconns_remoteport: ""
     collectd_plugin_tcpconns_allportssummary: "false"
 
+#### [Plugin unixsock](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_unixsock)
+
+    collectd_plugin_unixsock: false
+    collectd_plugin_unixsock_socketfile: "/var/run/collectd-unixsock"
+    collectd_plugin_unixsock_socketgroup: "collectd"
+    collectd_plugin_unixsock_socketperms: "0660"
+    collectd_plugin_unixsock_deletesocket: "false"
+
 #### [Plugin uptime](https://collectd.org/wiki/index.php/Plugin:Uptime)
 
     collectd_plugin_uptime: false

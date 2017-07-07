@@ -22,6 +22,19 @@
     - collectd
     - collectd-utils
 
+- name: Install collectd system group.
+  group:
+    name: collectd
+    system: yes
+  when: collectd_create_user
+
+- name: Install collectd system group.
+  user:
+    name: collectd
+    group: collectd
+    system: yes
+  when: collectd_create_user
+
 - name: Create Collectd plugin configuration directory.
   file:
     path: "{{collectd_conf_include_dir }}"

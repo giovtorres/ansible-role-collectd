@@ -1,5 +1,6 @@
 ---
 collectd_version: "5.7"
+collectd_create_user: no
 collectd_yum_repo_enabled: yes
 
 collectd_global_config: /etc/collectd.conf
@@ -164,6 +165,12 @@ collectd_plugin_tcpconns_listeningports: "false"
 #collectd_plugin_tcpconns_localport: ""
 #collectd_plugin_tcpconns_remoteport: ""
 collectd_plugin_tcpconns_allportssummary: "false"
+
+collectd_plugin_unixsock: false
+collectd_plugin_unixsock_socketfile: "/var/run/collectd-unixsock"
+collectd_plugin_unixsock_socketgroup: "collectd"
+collectd_plugin_unixsock_socketperms: "0770"
+collectd_plugin_unixsock_deletesocket: "false"
 
 collectd_plugin_uuid: false
 #collectd_plugin_uuid_uuidfile: "/etc/uuid"
