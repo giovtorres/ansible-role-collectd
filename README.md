@@ -227,6 +227,25 @@ options.
     collectd_plugin_rrdtool_cacheflush: 900
     collectd_plugin_rrdtool_writepersecond: 50
 
+#### Plugin statsd
+
+    collectd_plugin_statsd: false
+    collectd_plugin_statsd_host: "::"
+    collectd_plugin_statsd_port: "8125"
+    collectd_plugin_statsd_deletecounters: "false"
+    collectd_plugin_statsd_deletetimers: "false"
+    collectd_plugin_statsd_deletegauges: "false"
+    collectd_plugin_statsd_deletesets: "false"
+    collectd_plugin_statsd_countersum: "false"
+    #collectd_plugin_statsd_timerpercentiles:
+    #  - 90.0
+    #  - 95.0
+    #  - 99.0
+    collectd_plugin_statsd_timerlower: "false"
+    collectd_plugin_statsd_timerupper: "false"
+    collectd_plugin_statsd_timersum: "false"
+    collectd_plugin_statsd_timercount: "false"
+
 #### Plugin swap
 
     collectd_plugin_swap: false

@@ -1,0 +1,20 @@
+# {{ ansible_managed }}
+#
+LoadPlugin statsd
+
+<Plugin statsd>
+  Host "{{ collectd_plugin_statsd_host }}"
+  Port "{{ collectd_plugin_statsd_port }}"
+  DeleteCounters {{ collectd_plugin_statsd_deletecounters }}
+  DeleteTimers   {{ collectd_plugin_statsd_deletetimers }}
+  DeleteGauges   {{ collectd_plugin_statsd_deletegauges }}
+  DeleteSets     {{ collectd_plugin_statsd_deletesets }}
+  CounterSum     {{ collectd_plugin_statsd_countersum }}
+{% for timerpercentile in collectd_plugin_statsd_timerpercentiles %}
+  TimerPercentile {{ timerpercentile }}
+{% endfor %}
+  TimerLower     {{ collectd_plugin_statsd_timerlower }}
+  TimerUpper     {{ collectd_plugin_statsd_timerupper }}
+  TimerSum       {{ collectd_plugin_statsd_timersum }}
+  TimerCount     {{ collectd_plugin_statsd_timercount }}
+</Plugin>
