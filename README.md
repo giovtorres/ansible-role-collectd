@@ -199,6 +199,11 @@ options.
     #collectd_plugin_nginx_password: ""
     collectd_plugin_nginx_cacert: /etc/pki/tls/certs/ca-bundle.crt
 
+#### [Plugin notify_nagios](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_notify_nagios)
+
+    collectd_plugin_notify_nagios: false
+    collectd_plugin_notify_nagios_commandfile: /usr/local/nagios/var/rw/nagios.cmd
+
 #### Plugin ntpd
 
     collectd_plugin_ntpd: false
@@ -210,7 +215,7 @@ options.
 
     collectd_plugin_numa: false
 
-#### Plugin [nut](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_nut)
+#### [Plugin nut](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_nut)
 
     collectd_plugin_nut: false
     collectd_plugin_nut_ups: "upsname@hostname:port"

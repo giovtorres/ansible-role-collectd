@@ -1,0 +1,7 @@
+# {{ ansible_managed }}
+#
+LoadPlugin notify_nagios
+
+<Plugin notify_nagios>
+  CommandFile "{{ collectd_plugin_notify_nagios_commandfile }}"
+</Plugin>

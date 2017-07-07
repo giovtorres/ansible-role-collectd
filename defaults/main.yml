@@ -95,6 +95,9 @@ collectd_plugin_memory: true
 collectd_plugin_memory_valuesabsolute: "true"
 collectd_plugin_memory_valuespercentage: "false"
 
+collectd_plugin_notify_nagios: false
+collectd_plugin_notify_nagios_commandfile: /usr/local/nagios/var/rw/nagios.cmd
+
 collectd_plugin_nfs: false
 
 collectd_plugin_nginx: false
