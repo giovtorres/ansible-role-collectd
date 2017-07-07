@@ -50,7 +50,7 @@
     owner: root
     group: root
     mode: 0644
-#  validate: collectd -c -T
+#  validate: "/usr/sbin/collectd -T -C %s"
   notify: restart collectd
 
 - name: Enable and configure plugins.

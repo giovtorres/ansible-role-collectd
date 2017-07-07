@@ -130,6 +130,17 @@ collectd_plugin_protocols_values:
   - "/^Tcp:/"
 collectd_plugin_protocols_ignoreselected: "false"
 
+collectd_plugin_redis: false
+#collectd_plugin_redis_nodes:
+#  - node: "example"
+#    host: "localhost"
+#    port: "6379"
+#    timeout: 2000
+#    queries:
+#      - query: "LLEN myqueue"
+#        type: "queue_length"
+#        instance: "myqueue"
+
 collectd_plugin_rrdtool: true
 collectd_plugin_rrdtool_datadir: "{{ collectd_conf_basedir }}/rrd"
 collectd_plugin_rrdtool_createfileasync: "false"

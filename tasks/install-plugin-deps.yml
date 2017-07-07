@@ -36,6 +36,14 @@
     - collectd_plugin_nut is defined
     - collectd_plugin_nut
 
+- name: Install redis plugin dependency.
+  yum:
+    name: collectd-redis
+  when:
+    - collectd_plugin_redis is defined
+    - collectd_plugin_redis
+    - ansible_distribution_major_version|int >= 7
+
 - name: Install virt plugin dependency.
   yum:
     name: collectd-virt

@@ -1,0 +1,21 @@
+# {{ ansible_managed }}
+#
+LoadPlugin redis
+
+<Plugin redis>
+{% for node in collectd_plugin_redis_nodes %}
+  <Node {{ node.node }}>
+    Host "{{ node.host }}"
+    Port "{{ node.port }}"
+    Timeout {{ node.timeout }}
+{% if node.queries is defined %}
+{% for query in node.queries %}
+    <Query "{{ query.query }}">
+      Type "{{ query.type }}"
+      Instance "{{ query.instance }}"
+    </Query>
+{% endfor %}
+{% endif %}
+  </Node>
+{% endfor %}
+</Plugin>

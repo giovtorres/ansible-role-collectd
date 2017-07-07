@@ -1,7 +1,10 @@
 ---
 - hosts: all
   vars:
+    #epel_state: absent
+
     collectd_create_user: yes
+
     collectd_plugin_cgroups: true
     collectd_plugin_contextswitch: true
     collectd_plugin_conntrack: true

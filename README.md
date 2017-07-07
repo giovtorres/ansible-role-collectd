@@ -237,6 +237,19 @@ options.
       - "/^Tcp:/"
     collectd_plugin_protocols_ignoreselected: "false"
 
+#### [Plugin redis](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_redis)
+
+    collectd_plugin_redis: false
+    #collectd_plugin_redis_nodes:
+    #  - node: "example"
+    #    host: "localhost"
+    #    port: "6379"
+    #    timeout: 2000
+    #    queries:
+    #      - query: "LLEN myqueue"
+    #        type: "queue_length"
+    #        instance: "myqueue"
+
 #### Plugin rrdtool
 
     collectd_plugin_rrdtool: true
