@@ -1,6 +1,7 @@
 # Ansible Role: collectd
 
 [![Build Status](https://travis-ci.org/giovtorres/ansible-role-collectd.svg?branch=master)](https://travis-ci.org/giovtorres/ansible-role-collectd)
+[![Ansible Role](https://img.shields.io/ansible/role/18703.svg)](https://galaxy.ansible.com/giovtorres/collectd/)
 
 Installs and configures [collectd](https://collectd.org), the system statistics
 collection daemon.  Supported on EL 6 and 7.
