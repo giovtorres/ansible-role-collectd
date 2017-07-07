@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+#
+LoadPlugin tcpconns
+
+<Plugin tcpconns>
+  ListeningPorts {{ collectd_plugin_tcpconns_listeningports }}
+  LocalPort "{{ collectd_plugin_tcpconns_localport }}"
+  RemotePort "{{ collectd_plugin_tcpconns_remoteport }}"
+  AllPortsSummary {{ collectd_plugin_tcpconns_allportssummary }}
+</Plugin>

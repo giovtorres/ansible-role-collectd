@@ -235,6 +235,14 @@ options.
     collectd_plugin_swap_valuesabsolute: "true"
     collectd_plugin_swap_valuespercentage: "false"
 
+#### Plugin tcpconns
+
+    collectd_plugin_tcpconns: false
+    collectd_plugin_tcpconns_listeningports: "false"
+    #collectd_plugin_tcpconns_localport: ""
+    #collectd_plugin_tcpconns_remoteport: ""
+    collectd_plugin_tcpconns_allportssummary: "false"
+
 #### Plugin write_graphite
 
     collectd_plugin_write_graphite: false

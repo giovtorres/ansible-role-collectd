@@ -130,6 +130,12 @@ collectd_plugin_swap_reportbytes: "false"
 collectd_plugin_swap_valuesabsolute: "true"
 collectd_plugin_swap_valuespercentage: "false"
 
+collectd_plugin_tcpconns: false
+collectd_plugin_tcpconns_listeningports: "false"
+#collectd_plugin_tcpconns_localport: ""
+#collectd_plugin_tcpconns_remoteport: ""
+collectd_plugin_tcpconns_allportssummary: "false"
+
 collectd_plugin_write_graphite: false
 #collectd_plugin_write_graphite_nodes:
 #  - node: example
