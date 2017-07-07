@@ -19,7 +19,6 @@ collectd_conf_typesdb: /usr/share/collectd/types.db
 
 collectd_conf_autoloadplugin: "false"
 collectd_conf_collectinternalstats: "false"
-collectd_plugin_logging: syslog # logfile, log_logstash
 
 collectd_conf_interval: 10
 collectd_conf_maxreadinterval: 86400
@@ -28,6 +27,22 @@ collectd_conf_readthreads: 5
 collectd_conf_writethreads: 5
 
 collectd_conf_include_dir: /etc/collectd.d
+
+#### Logging Configuration
+
+collectd_plugin_logging: syslog
+collectd_plugin_logging_directory: "/var/log/collectd"
+
+collectd_plugin_logfile_loglevel: "info"
+collectd_plugin_logfile_file: "{{ collectd_plugin_logging_directory }}/collectd.log"
+collectd_plugin_logfile_timestamp: "true"
+collectd_plugin_logfile_printseverity: "false"
+
+collectd_plugin_logstash_loglevel: "info"
+collectd_plugin_logstash_file: "{{ collectd_plugin_logging_directory }}/collectd.json.log"
+
+collectd_plugin_syslog_loglevel: "info"
+#collectd_plugin_syslog_notifylevel: ""
 
 ## Plugin Configuration
 

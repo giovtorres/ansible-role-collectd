@@ -60,10 +60,6 @@ name.  Disabled by default:
 
     collectd_conf_collectinternalstats: "false"
 
-Set the logging plugin.  Valid values are "syslog", "logfile" and "log_logstash":
-
-    collectd_plugin_logging: syslog
-
 Set the interval at which to query values:
 
     collectd_conf_interval: 10
@@ -84,6 +80,33 @@ recommended for servers handling a high volume of traffic.
 Include all configuration files in this directory:
 
     collectd_conf_include_dir: /etc/collectd.d
+
+### Logging Configuration
+
+Set the logging plugin.  Valid values are "syslog", "logfile" and "log_logstash":
+
+    collectd_plugin_logging: syslog
+
+For logging plugins that write to a file, write to a file in this directory:
+
+    collectd_plugin_logging_directory: "/var/log/collectd"
+
+Logfile plugin options:
+
+    collectd_plugin_logfile_loglevel: "info"
+    collectd_plugin_logfile_file: "{{ collectd_plugin_logging_directory }}/collectd.log"
+    collectd_plugin_logfile_timestamp: "true"
+    collectd_plugin_logfile_printseverity: "false"
+
+Log_logstash plugin options:
+
+    collectd_plugin_logstash_loglevel: "info"
+    collectd_plugin_logstash_file: "{{ collectd_plugin_logging_directory }}/collectd.json.log"
+
+Syslog plugin options:
+
+    collectd_plugin_syslog_loglevel: "info"
+    #collectd_plugin_syslog_notifylevel: ""
 
 ### Plugin Configuration
 

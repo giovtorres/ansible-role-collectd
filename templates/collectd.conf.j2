@@ -69,23 +69,26 @@ LoadPlugin {{ collectd_plugin_logging }}
 
 {% if collectd_plugin_logging == "logfile" %}
 <Plugin logfile>
-	LogLevel info
-	File STDOUT
-	Timestamp true
-	PrintSeverity false
+  LogLevel {{ collectd_plugin_logfile_loglevel }}
+  File "{{ collectd_plugin_logfile_file }}"
+  Timestamp {{ collectd_plugin_logfile_timestamp }}
+  PrintSeverity {{ collectd_plugin_logfile_printseverity }}
 </Plugin>
 {% endif -%}
 
 {% if collectd_plugin_logging== "log_logstash" %}
 <Plugin log_logstash>
-	LogLevel info
-	File "/var/log/collectd.json.log"
+  LogLevel {{ collectd_plugin_logstash_loglevel }}
+  File "{{ collectd_plugin_logstash_file }}"
 </Plugin>
 {% endif -%}
 
 {% if collectd_plugin_logging== "syslog" %}
 <Plugin syslog>
-	LogLevel info
+  LogLevel {{ collectd_plugin_syslog_loglevel }}
+{% if collectd_plugin_syslog_notifylevel is defined %}
+  NotifyLevel {{ collectd_plugin_syslog_notifylevel }}
+{% endif %}
 </Plugin>
 {% endif %}
 

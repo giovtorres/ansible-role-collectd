@@ -35,9 +35,17 @@
     system: yes
   when: collectd_create_user
 
+- name: Create logging directory.
+  file:
+    path: "{{ collectd_plugin_logging_directory }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0770
+
 - name: Create Collectd plugin configuration directory.
   file:
-    path: "{{collectd_conf_include_dir }}"
+    path: "{{ collectd_conf_include_dir }}"
     state: directory
     owner: root
     group: root

@@ -5,6 +5,8 @@
 
     collectd_create_user: yes
 
+    collectd_plugin_logging: logfile
+
     collectd_plugin_cgroups: true
     collectd_plugin_contextswitch: true
     collectd_plugin_conntrack: true
