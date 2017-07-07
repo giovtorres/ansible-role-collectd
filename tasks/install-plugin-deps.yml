@@ -29,6 +29,13 @@
     - collectd_plugin_nginx is defined
     - collectd_plugin_nginx
 
+- name: Install nut plugin dependency.
+  yum:
+    name: collectd-nut
+  when:
+    - collectd_plugin_nut is defined
+    - collectd_plugin_nut
+
 - name: Install write_http plugin dependency.
   yum:
     name: collectd-write_http

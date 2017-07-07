@@ -209,6 +209,11 @@ options.
 
     collectd_plugin_numa: false
 
+#### Plugin [nut](https://collectd.org/documentation/manpages/collectd.conf.5.shtml#plugin_nut)
+
+    collectd_plugin_nut: false
+    collectd_plugin_nut_ups: "upsname@hostname:port"
+
 #### Plugin processes
 
     collectd_plugin_processes: false

@@ -110,6 +110,9 @@ collectd_plugin_ntpd_includeunitid: "true"
 
 collectd_plugin_numa: false
 
+collectd_plugin_nut: false
+collectd_plugin_nut_ups: "upsname@hostname:port"
+
 collectd_plugin_processes: false
 #collectd_plugin_processes_processes:
 #  - name
