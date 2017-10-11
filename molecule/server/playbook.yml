@@ -1,0 +1,13 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    #epel_state: absent
+
+    collectd_create_user: yes
+
+    collectd_plugin_logging: logfile
+
+    collectd_plugin_cgroups: true
+  roles:
+    - role: ansible-role-collectd

@@ -7,8 +7,8 @@ before_install:
   - pip install ansible
   - ansible-galaxy init giovtorres.epel
 install:
-  - pip install molecule docker testinfra>=1.6.0 requests==2.17.0
+  - pip install molecule docker-py 
 script:
-  - molecule test
+  - molecule test --all
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

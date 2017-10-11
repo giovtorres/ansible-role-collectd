@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Converge
+  hosts: all
   vars:
     #epel_state: absent
 
@@ -27,10 +28,10 @@
     collectd_plugin_swap: true
     collectd_plugin_swap_reportbytes: "true"
     collectd_plugin_unixsock: true
+    collectd_plugin_unixsock_socketgroup: root
     collectd_plugin_uptime: true
     collectd_plugin_users: true
     collectd_plugin_uuid: true
     collectd_plugin_vmem: true
-
   roles:
-    - ansible-role-collectd
+    - role: ansible-role-collectd
