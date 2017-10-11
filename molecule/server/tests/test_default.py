@@ -12,3 +12,8 @@ def test_hosts_file(host):
     assert f.exists
     assert f.user == 'root'
     assert f.group == 'root'
+
+
+def test_collectd_socket(host):
+    assert host.socket("udp://ff18::efc0:4a42:25826").is_listening
+    assert host.socket("udp://239.192.74.66:25826").is_listening

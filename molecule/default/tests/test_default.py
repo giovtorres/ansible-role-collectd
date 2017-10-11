@@ -41,3 +41,7 @@ def test_collectd_rrdtool_dir(host):
     assert f.user == "root"
     assert f.group == "root"
     assert f.mode == 0o755
+
+
+def test_collectd_socket(host):
+    assert host.socket("udp://ff18::efc0:4a42:25826").is_listening is False

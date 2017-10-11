@@ -9,5 +9,18 @@
     collectd_plugin_logging: logfile
 
     collectd_plugin_cgroups: true
+    collectd_plugin_network: true
+    collectd_plugin_network_listen:
+      - host: ff18::efc0:4a42
+        port: 25826
+      - block:
+          host: 239.192.74.66
+          port: 25826
+          securitylevel: None
+          interface: eth0
+  pre_tasks:
+    - name: Install netstat for socket tests
+      package:
+        name: net-tools
   roles:
     - role: ansible-role-collectd

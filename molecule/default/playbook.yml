@@ -21,6 +21,10 @@
     collectd_plugin_entropy: true
     collectd_plugin_disk: true
     collectd_plugin_numa: true
+    collectd_plugin_network: true
+    collectd_plugin_network_servers:
+      - host: ff18::efc0:4a42
+        port: 25826
     collectd_plugin_processes: true
     collectd_plugin_processes_process:
       - collectd
@@ -33,5 +37,9 @@
     collectd_plugin_users: true
     collectd_plugin_uuid: true
     collectd_plugin_vmem: true
+  pre_tasks:
+    - name: Install netstat for socket tests
+      package:
+        name: net-tools
   roles:
     - role: ansible-role-collectd

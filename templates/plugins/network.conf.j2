@@ -1,0 +1,56 @@
+# {{ ansible_managed }}
+#
+LoadPlugin network
+
+<Plugin network>
+  # client setup
+{% if collectd_plugin_network_servers is defined %}
+{% for server in collectd_plugin_network_servers %}
+{% if server.block is defined %}
+  <Server "{{ server.block.host }}" "{{ server.block.port }}">
+    SecurityLevel {{ server.block.securitylevel }}
+    Username "{{ server.block.username }}"
+    Password "{{ server.block.password }}"
+    Interface "{{ server.block.interface }}"
+    ResolveInterval {{ server.block.resolveinterval }}
+  </Server>
+{% else %}
+  Server "{{ server.host }}" "{{ server.port }}"
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if collectd_plugin_network_timetolive is defined %}
+  TimeToLive {{ collectd_plugin_network_timetolive }}
+{% endif %}
+
+  # server setup
+{% if collectd_plugin_network_listen is defined %}
+{% for listen in collectd_plugin_network_listen %}
+{% if listen.block is defined %}
+  <Listen "{{ listen.block.host }}" "{{ listen.block.port }}">
+    SecurityLevel {{ listen.block.securitylevel }}
+{% if listen.block.authfile is defined %}
+    AuthFile "{{ listen.block.authfile }}"
+{% endif %}
+    Interface "{{ listen.block.interface }}"
+  </Listen>
+{% else %}
+  Listen "{{ listen.host }}" "{{ listen.port }}"
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if collectd_network_plugin_maxpacketsize is defined %}
+  MaxPacketSize {{ collectd_network_plugin_maxpacketsize }}
+{% endif %}
+{% if collectd_network_plugin_forward is defined %}
+  Forward {{ collectd_network_plugin_forward }}
+{% endif %}
+{% if collectd_network_plugin_cacheflush is defined %}
+  ReportStats {{ collectd_network_plugin_cacheflush }}
+{% endif %}
+{% if collectd_network_plugin_cacheflush is defined %}
+  CacheFlush {{ collectd_network_plugin_cacheflush }}
+{% endif %}
+</Plugin>
