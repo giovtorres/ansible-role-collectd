@@ -5,7 +5,7 @@ services:
   - docker
 before_install:
   - pip install ansible
-  - ansible-galaxy init giovtorres.epel
+  - ansible-galaxy install giovtorres.epel
 install:
   - pip install molecule docker-py 
 script:
